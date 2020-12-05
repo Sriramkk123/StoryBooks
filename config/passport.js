@@ -3,8 +3,8 @@ const { Mongoose } = require('mongoose')
 const GoogleStartegy = require('passport-google-oauth20').Strategy
 const mongoose = require('mongoose');
 const User = require('../models/User');
-const GOOGLE_CLIENT_ID = "644676652155-of70l3ojb4v2gj0rvi45nve0kg3eak6f.apps.googleusercontent.com"
-const GOOGLE_CLIENT_SECRET = "jwhW135Ec9VQK2ySJHWrdKWu"
+const GOOGLE_CLIENT_ID = process.env.GOOGLE_CLIENT_ID
+const GOOGLE_CLIENT_SECRET = process.env.GOOGLE_CLIENT_SECRET
 
 module.exports = function(passport){
     passport.use(new GoogleStartegy({

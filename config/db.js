@@ -1,10 +1,9 @@
 const mongoose = require('mongoose');
+const dotenv = require('dotenv');
 
-
-const MONGO_URI = "mongodb+srv://sriramkk:MongoIsAwesome@cluster0-2e4zn.mongodb.net/storybooks?retryWrites=true&w=majority";
 const connectDB = async() =>{
     try{
-        const conn = await mongoose.connect(MONGO_URI, {
+        const conn = await mongoose.connect(process.env.MONGO_URI, {
             useNewUrlParser: true,
             useUnifiedTopology: true,
             useUnifiedTopology: true
